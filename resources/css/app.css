@@ -29,14 +29,65 @@
         @apply text-xl font-bold;
     }
 
-    .list-nav-link{
-        @apply flex space-x-6 ml-6; 
+    .list-nav-link {
+        @apply flex space-x-6 ml-6;
     }
 
-    .nav-link{
+    .nav-link {
         @apply hover:text-gray-300 transition-colors;
     }
-
     /* Fim da edição do cabeçalho*/
     /* End of header editing */
+
+    /*Começo da edição da página*/
+    /* Beginning of page editing */
+    .content {
+        @apply flex-1 px-2 py-6 max-w-6xl w-full;
+    }
+    .content-title {
+        @apply flex justify-between items-center mb-6;
+    }
+    .page-title {
+        @apply text-2xl;
+    }
+
+    /*Área de edição do formulário*/
+    .form-container {
+        @apply mt-6 bg-white shadow-md rounded-lg p-6;
+    }
+
+    .form-label {
+        @apply block text-sm font-semibold;
+    }
+
+    .form-input {
+        @apply border p-2 w-full mt-1 rounded-md border-blue-100 shadow-sm 
+        focus:border-blue-300 focus:ring-blue-200 focus:outline-none;
+    }
+    /*Área de edição do formulário*/
+
+    /*Área de edição dos botões*/
+    /* Button editing area */
+    .btn-primary {
+        @apply bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors;
+    }
+
+    .btn-success {
+        @apply p-2 bg-green-500 text-white rounded-md hover:bg-green-600 cursor-pointer transition-colors;
+    }
+    /*Área de edição dos botões*/
+    /* Button editing area */
+
+    /*Área de edição dos alertas*/
+    .alert-success {
+        @apply p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400;
+    }
+
+     .alert-error {
+        @apply p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400;
+    }
+    /*Área de edição dos alertas*/
+
+    /*Fim da edição da página*/
+    /* End of page editing */
 }
