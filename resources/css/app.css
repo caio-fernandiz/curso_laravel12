@@ -15,7 +15,7 @@
     /* Começo da edição do cabeçalho */
     /* Beginning of header editing */
     .main-container {
-        @apply flex flex-col h-screen bg-gray-100 items-center justify-center;
+        @apply flex flex-col h-screen bg-gray-100;
     }
 
     .header {
@@ -35,6 +35,10 @@
 
     .nav-link {
         @apply hover:text-gray-300 transition-colors;
+    }
+
+    .center-box{
+        @apply flex flex-col items-center justify-center;
     }
     /* Fim da edição do cabeçalho*/
     /* End of header editing */
@@ -65,6 +69,54 @@
         focus:border-blue-300 focus:ring-blue-200 focus:outline-none;
     }
     /*Área de edição do formulário*/
+
+    /*Área de edição da tabela*/
+    .table-container{
+        @apply overflow-x-auto bg-white shadow-md rounded-lg;
+    }
+
+    .table{
+        @apply min-w-full border-collapse w-full;
+    }
+
+    .table-header{
+        @apply bg-blue-400 text-white uppercase text-sm leading-normal;
+    }
+
+    .table-header th{
+        @apply py-3 px-6 text-left;
+    }
+
+    .table-header .center{
+        @apply text-center;
+    }
+
+    .table-body{
+        @apply text-gray-700 text-sm font-light;
+    }
+
+    .table-row{
+        @apply border-b border-gray-200 hover:bg-blue-50 transition;
+    }
+
+    .table-cell{
+        @apply py-3 px-6;
+    }
+
+    .table-actions{
+        @apply py-3 px-6 text-center;
+    }
+
+    .table-error{
+        @apply flex flex-col items-center justify-center font-bold text-2xl bg-red-200;
+    }
+
+    /* páginação*/
+    .pagination{
+        @apply mt-2 p-3; 
+    }
+
+    /*Área de edição da tabela*/
 
     /*Área de edição dos botões*/
     /* Button editing area */

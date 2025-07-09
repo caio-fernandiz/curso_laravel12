@@ -18,11 +18,14 @@
             <div class="content-header">
                 <h2 class="title-logo"> <a href="{{ route('dashboard') }}">SisEn</a> </h2>
                 <ul class="list-nav-link">
-                    <li> <a href="#" class="nav-link">Usuário</a> </li>
+                    <li> <a href="{{ route('user.list') }}" class="nav-link">Usuários</a> </li>
+                    <li> <a href="#" class="nav-link">Sair</a> </li>
                 </ul>
             </div>
         </header>
-    @yield('content')
+        <div class="center-box">
+        @yield('content')
+        </div>
     </div>
 </body>
 

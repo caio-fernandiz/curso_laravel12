@@ -13,7 +13,7 @@ class UserController extends Controller
         return view('users.create');
     }
 
-     public function store(UserRequest $request)
+    public function store(UserRequest $request)
     {
         //dd($request);
 
@@ -26,10 +26,16 @@ class UserController extends Controller
             ]);
 
             return redirect()->route('user.create')->with('success', 'Usuário cadastrado com sucesso');
-        }
-        
-        catch (Exception $e) {
+        } catch (Exception $e) {
             return back()->withInput()->with('error', 'Falha em cadastrar usuário');
         }
+    }
+
+
+    public function list()
+    {
+        $users = User::orderByDesc('id')->paginate('2');
+
+        return view('users.list', ['users' => $users ]);
     }
 }
