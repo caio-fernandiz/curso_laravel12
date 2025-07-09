@@ -12,12 +12,12 @@
 }
 
 @layer components {
-    .main-container {
-        @apply flex flex-col h-screen bg-gray-100;
-    }
-
     /* Começo da edição do cabeçalho */
     /* Beginning of header editing */
+    .main-container {
+        @apply flex flex-col h-screen bg-gray-100 items-center justify-center;
+    }
+
     .header {
         @apply bg-blue-700 text-white p-4 w-full;
     }
@@ -53,7 +53,7 @@
 
     /*Área de edição do formulário*/
     .form-container {
-        @apply mt-6 bg-white shadow-md rounded-lg p-6;
+        @apply mt-6  bg-white shadow-md rounded-lg p-6;
     }
 
     .form-label {
@@ -83,7 +83,7 @@
         @apply p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400;
     }
 
-     .alert-error {
+    .alert-error {
         @apply p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400;
     }
     /*Área de edição dos alertas*/
