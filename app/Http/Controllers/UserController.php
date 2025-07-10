@@ -15,7 +15,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        //dd($request);
+
 
         try {
 
@@ -37,5 +37,23 @@ class UserController extends Controller
         $users = User::orderByDesc('id')->paginate('2');
 
         return view('users.list', ['users' => $users ]);
+    }
+
+    public function edit(User $user)
+    {
+        return view('users.edit', ['user' => $user]);
+    }
+
+    public function update(UserRequest $request, User $user)
+    {
+        try{
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email
+            ]);
+            return redirect()->route('user.edit', ['user' => $user->id])->with('success', 'Usuário editado com sucesso');
+        }catch(Exception $e){
+            return back()->withInput()->with('error', 'Falha em editar usuário');
+        }
     }
 }
