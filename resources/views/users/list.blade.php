@@ -58,6 +58,12 @@
                 }
             @endphp
             
+            {{-- <a></a> --}}
+
+            @if ($currentPage > 2 )
+                <a href="{{ $users->url( 1 )}}" class="btn-page"> << </a>
+            @endif
+                
             @if ($currentPage > 1)
                 <a href="{{ $users->url($currentPage - 1) }}" class="btn-page">Anterior</a>
             @endif
@@ -72,6 +78,10 @@
 
             @if ($currentPage < $lastPage)
                 <a href="{{ $users->url($currentPage + 1) }}" class="btn-page">Próxima</a>
+            @endif
+
+            @if ($currentPage < $lastPage -1 )
+                <a href="{{ $users->url( $lastPage )}}" class="btn-page"> >> </a>
             @endif
         </div>
         
