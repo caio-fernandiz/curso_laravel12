@@ -26,7 +26,11 @@
                             <td class="table-cell">{{ $user->id }}</td>
                             <td class="table-cell">{{ $user->name }}</td>
                             <td class="table-cell">{{ $user->email }}</td>
-                            <td class="table-actions">Visualizar Editar Apagar</td>
+                            <td class="table-actions">
+                                <a href="#" class="btn-primary">Visualizar</a>
+                                <a href="#" class="btn-edit">Editar</a>
+                                <a href="#" class="btn-delete">Apagar</a>
+                            </td>
                         </tr>
                     @empty
                         <div class="table-error">

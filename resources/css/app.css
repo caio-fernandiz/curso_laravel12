@@ -127,6 +127,14 @@
     .btn-success {
         @apply p-2 bg-green-500 text-white rounded-md hover:bg-green-600 cursor-pointer transition-colors;
     }
+
+    .btn-edit{
+        @apply bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors;
+    }
+
+    .btn-delete{
+        @apply bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors;
+    }
     /*Área de edição dos botões*/
     /* Button editing area */
 
