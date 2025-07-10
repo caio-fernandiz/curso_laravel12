@@ -57,8 +57,6 @@
                     $end = $currentPage + 1;
                 }
             @endphp
-            
-            {{-- <a></a> --}}
 
             @if ($currentPage > 2 )
                 <a href="{{ $users->url( 1 )}}" class="btn-page"> << </a>

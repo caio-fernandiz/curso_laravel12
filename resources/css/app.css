@@ -37,7 +37,7 @@
         @apply hover:text-gray-300 transition-colors;
     }
 
-    .center-box{
+    .center-box {
         @apply flex flex-col items-center justify-center;
     }
     /* Fim da edição do cabeçalho*/
@@ -71,49 +71,49 @@
     /*Área de edição do formulário*/
 
     /*Área de edição da tabela*/
-    .table-container{
+    .table-container {
         @apply overflow-x-auto bg-white shadow-md rounded-lg;
     }
 
-    .table{
+    .table {
         @apply min-w-full border-collapse w-full;
     }
 
-    .table-header{
+    .table-header {
         @apply bg-blue-400 text-white uppercase text-sm leading-normal;
     }
 
-    .table-header th{
+    .table-header th {
         @apply py-3 px-6 text-left;
     }
 
-    .table-header .center{
+    .table-header .center {
         @apply text-center;
     }
 
-    .table-body{
+    .table-body {
         @apply text-gray-700 text-sm font-light;
     }
 
-    .table-row{
+    .table-row {
         @apply border-b border-gray-200 hover:bg-blue-50 transition;
     }
 
-    .table-cell{
+    .table-cell {
         @apply py-3 px-6;
     }
 
-    .table-actions{
+    .table-actions {
         @apply py-3 px-6 text-center;
     }
 
-    .table-error{
+    .table-error {
         @apply flex flex-col items-center justify-center font-bold text-2xl bg-red-200;
     }
 
     /* páginação*/
-    .pagination{
-        @apply flex justify-end mt-6 space-x-3; 
+    .pagination {
+        @apply flex justify-end mt-6 space-x-3;
     }
 
     /*Área de edição da tabela*/
@@ -128,20 +128,24 @@
         @apply p-2 bg-green-500 text-white rounded-md hover:bg-green-600 cursor-pointer transition-colors;
     }
 
-    .btn-visualize{
+    .btn-visualize {
         @apply bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-600 transition-colors;
     }
-    
-    .btn-edit{
+
+    .btn-edit {
         @apply bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors;
     }
 
-    .btn-delete{
+    .btn-delete {
         @apply bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors;
     }
 
-    .btn-page{
-        @apply  bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors;
+    .btn-page {
+        @apply bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors;
+    }
+
+    .active {
+        @apply bg-green-500 hover:bg-green-600 transition-colors;
     }
     /*Área de edição dos botões*/
     /* Button editing area */
