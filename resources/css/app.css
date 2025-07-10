@@ -113,7 +113,7 @@
 
     /* páginação*/
     .pagination{
-        @apply mt-2 p-3; 
+        @apply flex justify-end mt-6 space-x-3; 
     }
 
     /*Área de edição da tabela*/
@@ -128,12 +128,20 @@
         @apply p-2 bg-green-500 text-white rounded-md hover:bg-green-600 cursor-pointer transition-colors;
     }
 
+    .btn-visualize{
+        @apply bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-600 transition-colors;
+    }
+    
     .btn-edit{
         @apply bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors;
     }
 
     .btn-delete{
         @apply bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors;
+    }
+
+    .btn-page{
+        @apply  bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors;
     }
     /*Área de edição dos botões*/
     /* Button editing area */

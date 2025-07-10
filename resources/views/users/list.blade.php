@@ -27,7 +27,7 @@
                             <td class="table-cell">{{ $user->name }}</td>
                             <td class="table-cell">{{ $user->email }}</td>
                             <td class="table-actions">
-                                <a href="#" class="btn-primary">Visualizar</a>
+                                <a href="#" class="btn-visualize">Visualizar</a>
                                 <a href="#" class="btn-edit">Editar</a>
                                 <a href="#" class="btn-delete">Apagar</a>
                             </td>
@@ -42,6 +42,37 @@
         </div>
 
         <div class="pagination">
-                {{ $users->links() }}
-            </div>
+            @php
+                $currentPage = $users->currentPage();
+                $lastPage = $users->lastPage();
+
+                if ($currentPage == 1) {
+                    $start = 1;
+                    $end = min(3, $lastPage);
+                } elseif ($currentPage == $lastPage) {
+                    $start = max($lastPage - 2, 1);
+                    $end = $lastPage;
+                } else {
+                    $start = $currentPage - 1;
+                    $end = $currentPage + 1;
+                }
+            @endphp
+            
+            @if ($currentPage > 1)
+                <a href="{{ $users->url($currentPage - 1) }}" class="btn-page">Anterior</a>
+            @endif
+            
+            @for ($i = $start; $i <= $end; $i++)
+                @if ($i == $currentPage)
+                    <span class="btn-page active">{{ $i }}</span>
+                @else
+                    <a href="{{ $users->url($i) }}" class="btn-page">{{ $i }}</a>
+                @endif
+            @endfor
+
+            @if ($currentPage < $lastPage)
+                <a href="{{ $users->url($currentPage + 1) }}" class="btn-page">Próxima</a>
+            @endif
+        </div>
+        
     @endsection
