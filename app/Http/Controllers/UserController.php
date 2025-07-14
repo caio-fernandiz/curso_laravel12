@@ -8,6 +8,18 @@ use Exception;
 
 class UserController extends Controller
 {
+    public function list()
+    {
+        $users = User::orderByDesc('id')->paginate('2');
+
+        return view('users.list', ['users' => $users ]);
+    }
+
+    public function show(User $user)
+    {
+        return view('users.show', ['user' => $user]);
+    }
+
     public function create()
     {
         return view('users.create');
@@ -15,8 +27,6 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-
-
         try {
 
             User::create([
@@ -29,14 +39,6 @@ class UserController extends Controller
         } catch (Exception $e) {
             return back()->withInput()->with('error', 'Falha em cadastrar usuário');
         }
-    }
-
-
-    public function list()
-    {
-        $users = User::orderByDesc('id')->paginate('2');
-
-        return view('users.list', ['users' => $users ]);
     }
 
     public function edit(User $user)

@@ -8,9 +8,6 @@
             <a href="{{ route('user.list') }}" class="btn-primary">Voltar</a>
         </div>
 
-
-        <h1>Editar Usuário</h1>
-
         <x-alert />
 
         <form action="{{ route('user.update', ['user' => $user->id]) }}" method="POST" class="form-container">
