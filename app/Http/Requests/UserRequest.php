@@ -24,16 +24,22 @@ class UserRequest extends FormRequest
     {
         $user = $this->route('user');
         $userId = $user?->id;
+
         return [
             'name' => 'required',
-            'email' => ['required','email',Rule::unique('users', 'email')->ignore($userId),],
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users', 'email')->ignore($userId),
+            ],
             'password' => 'required_if:password,!=,null|min:6'
         ];
     }
 
+
     public function messages(): array
     {
-        return[
+        return [
             'name.required' => "Informe o seu nome",
             'email.required' => "Informe o seu e-mail",
             'email.email' => "Necessário enviar e-mail válido",
