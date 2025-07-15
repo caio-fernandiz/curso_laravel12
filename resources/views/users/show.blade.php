@@ -5,7 +5,11 @@
     <div class="content">
         <div class="content-title">
             <h1 class="page-title">Detalhes Usuário</h1>
+            <span>
             <a href="{{ route('user.list') }}" class="btn-primary">Lista</a>
+            <a href="{{ route('user.edit', ['user'=> $user->id]) }}" class="btn-edit">Editar</a>
+            <a href="{{ route('user.edit-password', ['user'=> $user->id]) }}" class="btn-edit">Editar Senha</a>
+            </span>
         </div>
 
         <x-alert />

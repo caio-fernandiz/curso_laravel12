@@ -54,7 +54,7 @@ class UserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email
             ]);
-            return redirect()->route('user.edit', ['user' => $user->id])->with('success', 'Usuário editado com sucesso');
+            return redirect()->route('user.show', ['user' => $user->id])->with('success', 'Usuário editado com sucesso');
         }catch(Exception $e){
             return back()->withInput()->with('error', 'Falha em editar usuário');
         }
@@ -67,7 +67,7 @@ class UserController extends Controller
 
     public function updatePassword(Request $request, User $user)
     {
-
+        
         $request->validate([
             'password' => 'required|min:6',
         ], [
@@ -81,7 +81,7 @@ class UserController extends Controller
                 'password' => $request->password,
             ]);
 
-            return redirect()->route('user.edit-password', ['user' => $user->id])->with('success', 'Senha do usuário editada com sucesso!');
+            return redirect()->route('user.show', ['user' => $user->id])->with('success', 'Senha do usuário editada com sucesso!');
         } catch (Exception $e) {
 
             return back()->withInput()->with('error', 'Senha do usuário não editada!');
