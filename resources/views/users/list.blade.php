@@ -29,7 +29,11 @@
                             <td class="table-actions">
                                 <a href="{{ route('user.show', ['user'=> $user->id]) }}" class="btn-visualize">Visualizar</a>
                                 <a href="{{ route('user.edit', ['user'=> $user->id]) }}" class="btn-edit">Editar</a>
-                                <a href="#" class="btn-delete">Apagar</a>
+                                <form action="{{ route('user.erase', ['user'=> $user->id]) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                <button type="submit" class="btn-delete" onclick="return confirm('Confirme para apagar o usuário')">Apagar</button>
+                                </form>
                             </td>
                         </tr>
                     @empty

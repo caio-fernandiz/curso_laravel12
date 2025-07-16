@@ -87,4 +87,16 @@ class UserController extends Controller
             return back()->withInput()->with('error', 'Senha do usuário não editada!');
         } 
     }
+
+    public function erase(User $user)
+    {
+        try{
+            $user->delete();
+
+            return redirect()->route('user.list')->with('success', 'Usuário deletado com sucesso!');
+        }  catch (Exception $e) {
+
+            return back()->route()->with('error', 'Não foi possível deletado usuário');
+        }
+    }
 }

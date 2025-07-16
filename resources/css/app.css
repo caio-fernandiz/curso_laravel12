@@ -104,7 +104,7 @@
     }
 
     .table-actions {
-        @apply py-3 px-6 text-center;
+        @apply py-3 px-6 text-center flex items-center gap-2 justify-end;
     }
 
     .table-error {
@@ -145,7 +145,7 @@
     }
 
     .active {
-        @apply bg-green-500 hover:bg-green-600 transition-colors;
+        @apply bg-green-500 hover:bg-green-500 transition-colors;
     }
     /*Área de edição dos botões*/
     /* Button editing area */
