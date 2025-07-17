@@ -44,7 +44,7 @@ class UserRequest extends FormRequest
             'email.required' => "Informe o seu e-mail",
             'email.email' => "Necessário enviar e-mail válido",
             'email.unique' => "O e-mail já está cadastrado!",
-            'password.required_if:password,!=,null' => "Informe uma senha",
+            'password.required_if' => "Informe uma senha",
             'password.min' => "Senha com no mínimo :min caracteres"
         ];
     }
