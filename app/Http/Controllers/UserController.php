@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Mail\UserPdfMail;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Dompdf\Adapter\PDFLib;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -78,7 +82,7 @@ class UserController extends Controller
         try {
 
             $user->update([
-                'password' => $request->password,
+                'password' => bcrypt($request->password),
             ]);
 
             return redirect()->route('user.show', ['user' => $user->id])->with('success', 'Senha do usuário editada com sucesso!');
@@ -97,6 +101,25 @@ class UserController extends Controller
         }  catch (Exception $e) {
 
             return back()->route()->with('error', 'Não foi possível deletado usuário');
+        }
+    }
+
+    public function generatePDF(User $user)
+    {
+        try{$pdf = Pdf::loadView('users.generate-pdf', ['user' => $user])->setPaper('a4', 'portrait');
+            
+        $pdfPath = storage_path("app/public/usuario_{$user->name}.pdf");
+        
+        $pdf->save($pdfPath);
+
+        Mail::to($user->email)->send(new UserPdfMail($pdfPath, $user));
+
+        if(file_exists($pdfPath)){
+            unlink($pdfPath);
+        }
+        return redirect()->route('user.show', ['user' => $user->id])->with('success', 'E-mail enviado com sucesso!');
+        }catch(Exception $e){
+            return redirect()->route('user.show', ['user' => $user->id])->with('error', 'E-mail não enviado');
         }
     }
 }

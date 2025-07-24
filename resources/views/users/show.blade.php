@@ -7,6 +7,7 @@
             <h1 class="page-title">Detalhes Usuário</h1>
             <span class="flex items-center gap-2 justify-end">
                 <a href="{{ route('user.list') }}" class="btn-primary">Lista</a>
+                <a href="{{ route('user.generate-pdf', ['user' => $user->id]) }}" class="btn-edit">Gerar PDF</a>
                 <a href="{{ route('user.edit', ['user' => $user->id]) }}" class="btn-edit">Editar</a>
                 <a href="{{ route('user.edit-password', ['user' => $user->id]) }}" class="btn-edit">Editar Senha</a>
                 <form id="delete-form-{{ $user->id }}" action="{{ route('user.erase', ['user' => $user->id]) }}"
