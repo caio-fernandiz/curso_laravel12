@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\Mail\UserPdfMail;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Dompdf\Adapter\PDFLib;
 use Exception;
 use Illuminate\Http\Request;
@@ -26,6 +27,19 @@ class UserController extends Controller
             fn($query) => 
             $query->whereLike('email', '%' . $request->email . '%')
         )
+
+        ->when(
+            $request->filled('start_date_registration'),
+            fn($query) =>
+            $query->where('created_at', '>=', Carbon::parse($request->start_date_registration))
+        )
+
+        ->when(
+            $request->filled('end_date_registration'),
+            fn($query) =>
+            $query->where('created_at', '<=', Carbon::parse($request->end_date_registration))
+        )
+
         ->orderByDesc('id')
         ->paginate(5)
         ->withQueryString();
@@ -34,6 +48,8 @@ class UserController extends Controller
             'users' => $users,
             'name' => $request->name,
             'email' => $request->email,
+            'start_date_registration' => $request->start_date_registration,
+            'end_date_registration' => $request->end_date_registration, 
         ]);
     }
 
