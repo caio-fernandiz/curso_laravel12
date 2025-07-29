@@ -84,11 +84,7 @@
     }
 
     .table-header th {
-        @apply py-3 px-6 text-left;
-    }
-
-    .table-header .center {
-        @apply text-center;
+        @apply py-3 px-6 text-center;
     }
 
     .table-body {
@@ -100,11 +96,11 @@
     }
 
     .table-cell {
-        @apply py-3 px-6;
+        @apply py-3 px-6 text-center;
     }
 
     .table-actions {
-        @apply py-3 px-6 text-center flex items-center gap-2 justify-end;
+        @apply py-3 px-6 text-center flex items-center gap-2 justify-center;
     }
 
     .table-error {
